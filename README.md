@@ -19,6 +19,9 @@ int infantil, jogador;
     
    if (jogador==11||jogador==12||jogador==13||jogador==14||jogador==15||jogador==16||jogador==17){
     printf("O jogador Ã© juvenil B!");
+    
    }else if (jogador==5||jogador==6||jogador==7||jogador==8||jogador==9||jogador==10){
     printf("O jogador Ã© infantil A!");
-}}
+    
+}
+}
