@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <pthread.h>
+#include <unistd.h> // Para usar a função sleep()
+
+pthread_t threads[100];
+
+void *func(void *arg) {
+    int i;
+    
+    for (i = 0; i <= 5; i++) {
+        printf("%d\n", i);
+        sleep(1); // Utilize sleep() ao invés de Sleep() em sistemas Unix-like
+    }
+    
+    return NULL;
+}
+
+int main() {
+    pthread_create(&(threads[0]), NULL, func, NULL);
+    pthread_create(&(threads[1]), NULL, func, NULL);
+    pthread_create(&(threads[2]), NULL, func, NULL);
+    
+    pthread_join(threads[0], NULL);
+    pthread_join(threads[1], NULL);
+    pthread_join(threads[2], NULL);
+    
+    return 0;
+}
